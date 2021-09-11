@@ -1,14 +1,13 @@
 ﻿using Paramore.Brighter;
-using WebAPI.Infrastructure;
 
-namespace WebAPI.Handlers
+namespace WebAPI.SharedHandlers
 {
-    public class WriteCacheHandler<TRequest> : RequestHandler<TRequest>
+    public class ReadCacheHandler<TRequest> : RequestHandler<TRequest>
         where TRequest : class, IRequest
     {
         public override TRequest Handle(TRequest command)
         {
-            //_cacheService.WriteToCache(command.Id, command);
+            //_cacheService.ReadFromCache(command.Id);
             return base.Handle(command);
         }
     }

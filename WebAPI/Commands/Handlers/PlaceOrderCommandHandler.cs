@@ -1,15 +1,11 @@
 ﻿using Paramore.Brighter;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using WebAPI.Attributes;
-using WebAPI.Commands;
-using WebAPI.Handlers;
+using WebAPI.Infrastructure;
+using WebAPI.SharedHandlers;
 
 namespace WebAPI.Commands.Handlers
 {
-
     public class PlaceOrderCommandHandler : RequestHandler<PlaceOrderCommand>
     {
         [Logging(step: 1)]
@@ -26,7 +22,7 @@ namespace WebAPI.Commands.Handlers
         public override PlaceOrderCommand Handle(PlaceOrderCommand command)
         {
             try
-            {
+            {                
                 return base.Handle(command);
             }
             catch (Exception)
@@ -35,6 +31,4 @@ namespace WebAPI.Commands.Handlers
             }
         }
     }
-
-
 }

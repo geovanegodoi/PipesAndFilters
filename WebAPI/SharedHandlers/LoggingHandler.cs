@@ -1,8 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Paramore.Brighter;
-using System;
 
-namespace WebAPI.Handlers
+namespace WebAPI.SharedHandlers
 {
     public class LoggingHandler<TRequest> : RequestHandler<TRequest> 
         where TRequest : class, IRequest

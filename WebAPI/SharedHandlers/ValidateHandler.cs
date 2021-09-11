@@ -1,7 +1,7 @@
 ﻿using Paramore.Brighter;
 using System;
 
-namespace WebAPI.Handlers
+namespace WebAPI.SharedHandlers
 {
     public class ValidateHandler<TRequest> : RequestHandler<TRequest>
         where TRequest : class, IRequest

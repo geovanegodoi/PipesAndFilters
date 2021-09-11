@@ -1,18 +1,14 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Paramore.Brighter;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using WebAPI.Commands;
 using WebAPI.Commands.Handlers;
-using WebAPI.Handlers;
-using WebAPI.Infrastructure;
 using WebAPI.Queries;
 using WebAPI.Queries.Handlers;
 
 namespace WebAPI
 {
-    public static class StartupExtensions
+    public static partial class StartupExtensions
     {
         public static void AddCommandsAndHandlers(this IServiceCollection services)
         {
@@ -52,26 +48,6 @@ namespace WebAPI
                 .RequestContextFactory(new InMemoryRequestContextFactory());
 
             services.AddSingleton(builder.Build());
-        }
-
-        internal class SimpleHandlerFactory : IAmAHandlerFactory
-        {
-            private readonly ServiceProvider _serviceProvider;
-            public SimpleHandlerFactory(IServiceCollection services)
-            {
-                _serviceProvider = services.BuildServiceProvider();
-            }
-
-            public IHandleRequests Create(Type handlerType)
-            {
-                //TODO: Create an instance of the request type
-                return _serviceProvider.GetService(handlerType) as IHandleRequests;
-            }
-
-            public void Release(IHandleRequests handler)
-            {
-
-            }
         }
     }
 }

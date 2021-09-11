@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using WebAPI.Commands;
-using WebAPI.Filters;
 using WebAPI.Queries;
 
 namespace WebAPI.Controllers

@@ -1,10 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using Paramore.Brighter;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebAPI.Commands;
 
 namespace WebAPI.Commands.Handlers
 {

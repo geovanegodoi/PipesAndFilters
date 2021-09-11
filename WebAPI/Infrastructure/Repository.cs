@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace WebAPI.Infrastructure
+﻿namespace WebAPI.Infrastructure
 {
     public interface IRepository
     {
-        object ExecuteQuery(string query);
+        T ExecuteQuery<T>(string query) where T : class, new();
     }
 
     public class Repository : IRepository
     {
-        public object ExecuteQuery(string query) => "";
+        public T ExecuteQuery<T>(string query) where T : class, new()
+            => new T();
     }
 }

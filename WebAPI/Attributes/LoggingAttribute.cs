@@ -1,6 +1,6 @@
 ﻿using Paramore.Brighter;
 using System;
-using WebAPI.Handlers;
+using WebAPI.SharedHandlers;
 
 namespace WebAPI.Attributes
 {

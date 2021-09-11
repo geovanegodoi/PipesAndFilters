@@ -5,9 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using System.Diagnostics;
-using System.Globalization;
-using System.Reflection;
 using WebAPI.Filters;
 using WebAPI.Infrastructure;
 
@@ -47,8 +44,10 @@ namespace WebAPI
                 config.Filters.Add<MyResultFilter>();
             });
 
-            services.AddCommandsAndHandlers();
+            services.AddSingleton<ICacheService, CacheService>();
             services.AddSingleton<IRepository, Repository>();
+
+            services.AddCommandsAndHandlers();            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
